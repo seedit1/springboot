@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HttpControllerTest {
 	private static final String TAG ="HttpController Test : ";
 	
+	//http://localhost:8000/blog/http/lombok
 	@GetMapping("/http/lombok")
 	public String lombokTest() { //builder 패턴을 쓰면 순서를 지키지 않아도 된다. 
 		Member m = Member.builder().username("ssar").password("1234").email("ssar@nate.com").build();
@@ -28,7 +29,7 @@ public class HttpControllerTest {
 	}
 	
 	//인터넷브라우저요청은 무조건 get요청만 할수 있다. 
-	//http://localhost:8080/http/get(select)
+	//http://localhost:8000/blog/http/get(select)
 	@GetMapping("/http/get")
 	public String getTest(Member m) { //id=1&username=1234&password=1234&email=ssar@nate.com
 		return "get 요청 :" + m.getId() + ", " +m.getUsername() + "," + m.getPassword()+ ", " + m.getEmail();
