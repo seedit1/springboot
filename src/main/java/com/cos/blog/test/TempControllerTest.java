@@ -23,6 +23,9 @@ public class TempControllerTest {
 	
 	@GetMapping("/temp/jsp")
 	public String tempJsp() {
+		//prefix : /WEB-INF/views/
+		//suffix: .jsp
+		//풀네임 : /WEB-INF/views/test.jsp
 		return "/test";
 	}
 }
