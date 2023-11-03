@@ -48,7 +48,7 @@ public class Board {
 	@JoinColumn(name="userId") //테이블에는 userId로 만들어진다. 
 	private User user; //DB는 오브젝트를 저장할 수 없다. FK 자바는 오브젝트를 저장할 수 있다. 
 	
-	@OneToMany(mappedBy = "board") //mappedBy가 있으면 연관관계의 주인이 아니다.(FK가 아니다.)DB에 컬럼을 만들지 말아라.
+	@OneToMany(mappedBy = "board", fetch = FetchType.EAGER) //mappedBy가 있으면 연관관계의 주인이 아니다.(FK가 아니다.)DB에 컬럼을 만들지 말아라.
 	private List<Reply> reply;                   //하나의 게시글(한명의  유저)은 여러개의 답변을 가질수 있다.
 	
 	@CreationTimestamp
