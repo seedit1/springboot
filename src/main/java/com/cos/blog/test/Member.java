@@ -1,12 +1,12 @@
 package com.cos.blog.test;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
+
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+
+
 
 //@Getter
 //@Setter
@@ -26,8 +26,7 @@ public class Member {
 		this.password = password;
 		this.email = email;
 	}	
-	public Member( String username, String password, String email) {
-		this.id = id;
+	public Member( String username, String password, String email) {		
 		this.username = username;
 		this.password = password;
 		this.email = email;
