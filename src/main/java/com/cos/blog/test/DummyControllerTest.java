@@ -25,10 +25,10 @@ public class DummyControllerTest {
 		//user/4를 찾으면 내가 데이터베이스에서 못찾아오게 되면 user가 null  될것아냐?
 		//그럼 return null이 리턴이 되자나.  그럼 프로그램에 문제가 있지 않겠니?
 		//optional로 너의 User  객체를 감싸서 가져올테니 null인지 아닌지 판단해ㅐ서 return 해 !
-		User user = userRepository.findById(id).orElseThrow(new Supplier<IllegalArgumentException>() {
+		User user = userRepository.findById(id).orElseGet(new Supplier<User>() {
             @Override
-            public IllegalArgumentException get() {
-                return new IllegalArgumentException("해당 유저는 없습니다. id : " + id);
+            public User get() {
+                return new User();
             }
         });		
 		return user;
